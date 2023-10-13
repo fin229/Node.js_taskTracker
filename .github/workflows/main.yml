@@ -32,9 +32,3 @@ jobs:
         env:
           CI: true
 
-      - name: Upload webpack artifacts
-        uses: actions/upload-artifact@main
-        with:
-          name: webpack-artifacts
-          path: public/
-
