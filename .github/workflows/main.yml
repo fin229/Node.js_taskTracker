@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 16.x, 18.x]
+        node-version: [8.x, 10.x, 12.x]
         os: [macos-latest, windows-latest, ubuntu-18.04]
 
     steps:
@@ -21,14 +21,23 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Clear npm cache
-        run: npm cache clean -f
+      - name: Run npm audit
+        run: npm audit
+
+      - name: Run npm audit fix
+        run: npm audit fix
+
 
       - name: npm install, build and test
         run: |
-          npm ci
+          npm install
           npm run build --if-present
           npm test
         env:
           CI: true
 
+      - name: Upload webpack artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: webpack-artifacts
+          path: public/
