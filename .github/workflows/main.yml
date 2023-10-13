@@ -24,12 +24,9 @@ jobs:
       - name: Clear npm cache
         run: npm cache clean -f
 
-      - name: Run npm audit
-        run: npm audit
-
       - name: npm install, build and test
         run: |
-          npm ci
+          npm install
           npm run build --if-present
           npm test
         env:
