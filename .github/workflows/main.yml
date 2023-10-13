@@ -22,7 +22,7 @@ jobs:
           npm i
           npm run build --if-present
           chmod +x ./node_modules/.bin/ts-mocha
-          npm test:coverage
+          npm run test:coverage
         env:
           CI: true
 
