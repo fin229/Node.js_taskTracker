@@ -1,0 +1,18 @@
+{
+     "compilerOptions": {
+          "module": "ESNext",
+          "noImplicitAny": true,
+          "removeComments": true,
+          "preserveConstEnums": true,
+          "outDir": "./dist",
+          "rootDir": "./src",
+          "sourceMap": true,
+          "target": "ESNext",
+          "typeRoots": ["./types", "./node_modules/@types"],
+          "esModuleInterop": true,
+          "types": ["node", "mocha", "chai"],
+          "moduleResolution": "node"
+     },
+     "include": ["src/**/*", "test/**/*"],
+     "exclude": ["node_modules"]
+}
