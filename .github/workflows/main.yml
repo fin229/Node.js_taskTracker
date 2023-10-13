@@ -30,7 +30,7 @@ jobs:
           CI: true
 
       - name: Upload webpack artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: webpack-artifacts
           path: public/
