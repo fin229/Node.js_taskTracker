@@ -27,8 +27,8 @@ jobs:
         env:
           CI: true
 
-      - name: Upload webpack artifacts
+      - name: Upload coverage as artifact
         uses: actions/upload-artifact@main
         with:
-          name: webpack-artifacts
-          path: public/
+          name: coverage
+          path: coverage/tmp
