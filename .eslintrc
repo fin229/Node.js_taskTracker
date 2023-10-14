@@ -1,0 +1,12 @@
+{
+     "$schema": "http://json.schemastore.org/eslintrc",
+     "root": true,
+     "parser": "@typescript-eslint/parser",
+     "plugins": ["@typescript-eslint"],
+     "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+     "env": {
+          "commonjs": true,
+          "node": true,
+          "mocha": true
+     }
+}

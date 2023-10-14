@@ -1,1 +1,0 @@
-{"version":3,"file":"CommentReason.js","sourceRoot":"","sources":["../../src/enums/CommentReason.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,cAAc,GAAG;IAC1B,SAAS,EAAE,WAAW;IACtB,YAAY,EAAE,cAAc;CACtB,CAAC;AAGX,MAAM,CAAC,MAAM,cAAc,GAAoB,MAAM,CAAC,MAAM,CAAC,cAAc,CAAC,CAAC"}
