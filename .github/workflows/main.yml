@@ -5,33 +5,31 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-        os: [macos-latest, windows-latest, ubuntu-18.04]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 18.17.1
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-
-
+          node-version: 18.17.1
+          cache: 'npm'
+      
       - name: npm install, build and test
         run: |
-          npm i
+          npm ci
+          npm audit fix
           npm run build --if-present
-          npm test -- -u
+          chmod +x ./node_modules/.bin/ts-mocha
+          chmod +x ./node_modules/.bin/c8
+          npm run test:coverage
         env:
           CI: true
 
-      - name: Upload webpack artifacts
+      - name: Upload coverage as artifact
         uses: actions/upload-artifact@main
         with:
-          name: webpack-artifacts
-          path: public/
+          name: coverage
+          path: coverage/tmp
